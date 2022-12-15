@@ -1,0 +1,389 @@
+:root {/* root 가상클래스를 사용하면 요소 하나를 지정해서 사용할 수 있다. 
+    앞으로 저 메인컬러가 사용하고 싶다면 
+    --main-color에 색깔을 선언해주면 된다 그러면 나중에 호출하기 편하다. */
+
+    --main-color: rgb(75, 200, 250); /* 여길 변경하니까 <나의>가 변경되었네??? */
+   /* rgb(75, 200, 250); */
+}
+/* 전체에 대해 사용하지 않을 속성들 지우고 가겠다.  --> 이거 무슨말인지 모르겠다. */
+/* *{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+} */
+
+html { /* 제일 큰 html 이라는 요소  */
+    font-size: 20px; /* 폰트사이즈를 기본 20로 해줘서 가독성을 확보한다. */
+    overflow-x: hidden; 
+    /* 가로로 퍼지는 스크롤을 없애주는 기능 */
+    scroll-behavior : smooth; /* 스크롤 움직임을 부드럽게 해줌 */
+}
+
+body { /* 바디의 전체적인 요소를 지정해줌 */
+    background-color: white;/* 색은 아쿠아마린 */
+    padding-left: 35rem; /* body에 패딩을 600px만 주니까 header와 가까워졌다. */
+                        /* 이때의 35rem 값은 최상위 요소인 html의 font-size를 기준으로 한다. 
+                        1rem = 20px */
+}
+
+section {
+    min-height: 40vh;
+    padding: 1rem 5%;
+    /* ㅇㅋ감 잡았다. */
+}
+
+.btn-menu {
+    position: fixed; top: 10px; left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+
+header {
+    position: fixed; /* 헤더는 포지션 고정 */
+    top: 0; left: 0 ;  bottom: 0; /* 여백 하나도 없어야 왼쪽이 회색으로 예쁘게 잘 나온다. 헤더를 레프트에 붙여놓으니까 그냥 레프트에 위치시킨것처럼 보이네 그리고 left가 먼저라 right을 지정해도 효과가 없다.*/ 
+    display: flex; /* display를 flex 해 놓아야 블럭처럼 켜켜이 쌓이지 않고 움직여줄 수 있게 된다 */
+    align-items: center; /* 요소들은 가운데정렬 */
+    justify-content: space-between; /* justify 세로축에 대해서 위아래 끄트머리에 배정될 수 있게끔 space-between해준다.  */
+    flex-direction: column; /* flex-direction은 column으로 해줘야 블럭처럼 세로로 정렬이 된다. */
+    width: 25rem;  /* 20~25 rem이 적당해보인다. */
+    padding: 6rem 1rem; /* 안으로부터의 넓이 위아래 6 좌우 1 rem 정도가 적당하다. */
+    text-align: center;  /* 가운데정렬보다 왼쪽정렬이 더 멋있어보이는 이유는 뭘까  */
+    background-color: rgb(94, 92, 92); /* 배경색은 진한 회색으로 하면 괜찮아보인다 */
+}
+
+header .logo {/* 나의 포트폴리오를 의미한다. */
+    color: white;  /* 글씨색은 흰색으로 */
+    font-size: 2rem;
+    font-weight: bold;
+}
+header .logo span { /* span은 요소가 아니고 메소드라서 점(.)으로 하위요소 지정을 하면 안된다. */
+    color : var(--main-color);
+}
+header .navbar {
+    height: 30rem; /* navbar 자체의 성격을 지정해줌 */
+}
+header .navbar a{
+    display: block; /* block으로 해줘야 쌓이는 모양이됨 */
+    color: white;
+    margin: 1rem 0;
+    font-size: 1,5rem;
+
+}
+header .navbar a:hover{
+    color: var(--main-color)
+}
+
+header .sns a{
+    color : white;
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+header .sns a:hover{
+    color: var(--main-color);
+}
+
+
+input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(185,189,92,1) 0%, rgba(202,189,81,1) 0%, rgba(253,187,45,1) 0%, rgba(239,187,55,1) 0%, rgba(253,187,45,1) 0%, rgba(186,189,92,1) 19%, rgba(186,189,91,1) 23%, rgba(193,189,86,1) 34%, rgba(253,187,45,1) 34%, rgba(200,82,200,1) 34%, rgba(253,187,45,1) 35%, rgba(213,188,73,1) 52%);;
+
+}
+
+/* 로그인 영역 */
+#btn-close {
+    position: absolute;
+    }
+.login-wrap {
+    position: relative;
+    margin-top: 3rem;
+    margin-right: 50px;
+    top: 3rem;
+    left: 2rem;
+    transform: translate(-50%, -50%);
+    /* 이렇게 해서 정 가운데로 오게끔 해준다. */
+    width: 100px;
+    height: 600px;
+    padding: 20px;/* 패딩은 안에서부터의 넓이를 의미한다. 30정도 주는게 적당할 듯 하다 */
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 5px 5px 10px rgba(248, 246, 246, 0.4);
+}
+
+/* inner */
+#login {
+    width: 40%; 
+    height: 100%;
+   
+}
+
+#login .login-logo {
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 30px; /* << 로그인 로고에서부터 아래쪽에 갖는 여백을 의미함
+                                크면 클수록 아래의 요소들이 아래로 더 내려가게 됨 */
+/* 여기 문제가 있었음.. */
+}
+
+#login .login-logo img {
+    width: 100%; /* 부모요소의 100의 넓이를 갖도록 100%의 값을 할당 */
+    height: 100px;  /* <<<여기를 손보니까 로고 자체가 위로 올라간다. */
+    object-fit: contain;
+}
+
+/* id, pw */
+#login .login-inputbox {
+    position: relative;/* 부모요소의 크기로부터 상대적일 수 있게 */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#login .login-inputbox input {
+    width: 100%;
+    height: 32px;
+    padding-left: 5px;
+    font-size: 1rem;
+    border-bottom: 1px solid #aaa;  /* border-bottom 만 색깔 표시하게끔 일부러 지정함
+    만약에 border-top이 있으면 좀 이상할듯한데 한번 해보면 */
+    /* border-top: 1px solid yellow; ㅇㅇ 확실히 이상하다*/ 
+}
+
+/* ::placeholder
+    - input태그의 placeholder 속성을 선택하는 가상선택자
+    가상선택자 개념 아직도 잘 모르겠다
+*/
+
+#login .login-inputbox input::placeholder {
+    color: #aaa;
+    /* 임시로 갖다 쓰는 뭐 그런개념인가 */
+}
+
+#login .login-inputbox input ~ .border {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    border: 0px solid cornflowerblue;
+    background-color: cornflowerblue;
+}
+
+/* :focus */
+/*  - input 태그에 마우스 커서가 놓인 상태를 선택
+
+*/
+
+#login .login-inputbox input:focus ~ .border {
+    width: 100%;
+    border-width: 1px;
+    transition: width 0.5s;
+    transition-timing-function: ease-in-out;
+
+}
+
+#login .login-remember {
+    height: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+
+}
+
+#login .login-remember label{
+    position: relative;
+    padding-left: 25px;
+    color: #aaa;
+    cursor: pointer;
+    margin-right: 15px;
+
+}
+
+#login .login-remember label input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+#login .login-remember label .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #aaa;
+}
+
+/* 체크모양 */
+#login .login-remember label .checkmark::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 4px;
+    height: 8px;
+    border: solid wheat;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+#login .login-remember label input:checked ~ .checkmark {
+    background-color: cornflowerblue;
+}
+
+#login .login-remember label input:checked ~ span {
+    color: cornflowerblue;
+
+}
+
+/* 버튼 */
+#login .login-btnbox {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#login .login-btnbox .login-btn {
+    display: block;
+    background-color: cornflowerblue;
+    /* color: white;  >>> 이거 뭐지 */
+    font-size: 1.2rem;
+    color: white;
+    line-height: 50px;
+    border-radius: 5px;
+}
+
+#login .login-btnbox .login-btn:hover {
+    filter: brightness(90%);
+}
+/* 카피라이트 */
+#login .copy {
+    height: 15px;margin-top: 30px; margin-bottom: 10px;
+}
+#login .copy p {
+    font-size: 0.8rem;  text-align: center;
+}
+
+
+/* profile */
+.profile{
+    margin-top: 200px;
+    display : flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.profile .img{
+    flex: 1 1 50rem;
+}
+.profile .img img{
+    width: 100%;
+    max-width: 320px;
+}
+.profile .content{
+    flex: 1 1 50rem;
+}
+.profile .content .intro{
+    font-size: 2rem;
+    color: var(--main-color);
+
+}
+.profile .content h3 {
+    font-size: 4rem;
+    color: black;
+
+}
+
+.profile .content h3 span {
+    color: var(--main-color);
+
+}
+.profile .content .info {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.profile .content .text {
+    font-size: 1.2rem;
+    color: gray;
+
+}
+.btn {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem ;
+    border-radius: 40px;
+}
+
+.btn:hover {
+    background-color: royalblue ;
+
+}
+
+/* 슬라이드 */
+.slide-container {
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+}
+
+
+
+.slide-container .slide {
+    width: 100%;
+    height: 480px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+
+
+.slide img { 
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.slide-nav {
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+}
+
+
+.slide-nav .slide {
+    width: auto;
+    height: 180px;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+
+.slide-nav .slide:not(.slick-current) {
+    filter: brightness(20%);
+}
