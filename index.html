@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <script src="js/시험.js"></script>
+     <!-- slick js CDN -->
+     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+     <!-- slikc js FILE -->
+     <script src="js/slick.min.js"></script>
+<body>
+
+    <!-- @@@@@ header 시작 -->
+        <div class="header">
+        <header>
+            <span id="btn-close" class="btn-menu">
+            <i class="fas fa-times"></i>
+            </span>
+             <a href="#" class="logo"> 
+            <!-- logo를 누르면 hyperink로 걸리게끔 a태그를 사용함 -->
+            <span>나의</span>포트폴리오<!-- (나의)에다가 색깔을 입힐 수 있도록 span 태그를 사용함 -->
+             </a><!-- a 태그 종료. -->
+             <nav class="navbar"><!-- 내비게이션할 수 있게 이름을 navbar라고 명명하여 호출 -->
+            <a href="#login">login</a>  <!-- navbar 안에는 클릭 시 다른곳으로 이동할 수 있게끔 a 태그로 하위요소를 만들어준다 -->
+            <a href="#profile">profile</a>  <!-- navbar 안에는 클릭 시 다른곳으로 이동할 수 있게끔 a 태그로 하위요소를 만들어준다 -->
+            <a href="#portfolio">portfolio</a>
+                </nav> <!-- nav태그 종료 -->
+
+            <div class="sns"><!-- sns 마크들을 사용할 수 있게끔 div로 영역을 나눠 sns를 a 태그로 호출 -->
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+             </div><!-- div태그 종료  -->
+        </header>
+        </div>
+   
+    <!-- @@@@@ header 종료 -->
+    
+    
+    <!-- @@@@@ 로그인박스 시작 -->
+    <!-- <section class="profile" id="profile"></section> -->
+    <section class="login">
+        <span id="btn-menu" class="btn-menu">
+            <i class="fa fa-bars"></i>
+        </span>
+        
+        <form action="" method="post"> <!-- form action :             method=post :            -->
+        <!-- 로그인 박스 -->
+            <id class="login-wrap"> <!-- login이라는 객체를 감싸고 있는 id -->
+            <!-- id는 페이지의 고유한 속성으로 페이지에 한 번만 사용할 수 있지만 class는 여러 번 사용할 수 있음
+                공통으로 써야 하는 css의 속성값은 class로 지정하고 태그에 유일하게 들어가야 하는 속성값은 id로 지정하여 사용한다.
+            -->
+            <!-- 중첩박스 -->
+                <div id="login"><!-- id를 jd로 바꾸니까 로그인 창이 무효화된다 -->
+                
+                <!-- 로고 -->
+                  <div class="login-logo"><img src="img/human.jpg" alt=""></div>
+                
+                <!-- 아이디 -->
+                    <div class="login-inputbox">
+                    <input type="text" name="id" placeholder="아이디">
+                    <span class = "border"></span>
+                     </div>
+                
+                <!-- 비밀번호 -->
+                    <div class="login-inputbox">
+                    <input type="password" name="id" placeholder="비밀번호"><!-- name 꼭 중요하지 않나??? -->
+                    <span class = "border"></span>
+                    </div>
+                <!-- 아이디저장/ 자동로그인 -->
+                    <div class="login-remember">
+                    <label for="remember-id">
+                        <input type="checkbox" name="remember-id" id="remember-id">
+                        <span class = "checkmark"></span>
+                        <span>아이디저장</span>
+                    </label>
+                    <label for="remember-me">
+                        <input type="checkbox" name="remember-me" id="remember-me">
+                        <span class = "checkmark"></span>
+                        <span>자동로그인</span>
+                    </label>
+                    </div>
+                
+                <!-- 버튼(로그인/ 회원가입) -->
+                    <div class="login-btnbox"><a href="#" class="login-btn">로그인</a></div>
+                     <div class="login-btnbox"><a href="#" class="login-btn">회원가입</a></div>
+                <!-- 카피라이트 -->
+                     <div class="copy">
+                    <p>copyright&copy; 2023 휴먼에듀 . All right reserved</p>
+                    </div>
+                </div>
+             </id>
+        </form>
+    </section>
+    <!-- @@@@@ 로그인박스 종료 -->
+    
+    
+    <!-- @@@@@ 프로필 시작 -->
+    <section class="profile" id="profile">
+        
+        <div class="content">
+            <span class="intro">안녕하세요 :) </span> <!-- span으로 지정한 영역은 기본값 색상이 적용된다. -->
+            <h3> 나는 <span> 김휴먼입니다. </span></h3>
+            <p class="info"> 저는 빅데이터를 분석가입니다.</p>
+            <p class="text">
+                자바 기반 웹어플리케이션 개발 및 데이터 분석 역량을 갖춘
+                빅데이터 분석 전문가입니다.
+            </p>
+            <a href="#about" class="btn">자세한 소개</a><!-- 이거 왜 about이 쓰인건가 ㅅㅂ 모르겠네 -->
+            <!-- ↑ 클릭 이벤트 발생 시 about으로 이동시키기 위한 관례임 -->
+        </div>
+    </section>
+    <div class="img">
+        <img src="img/profile.jpg" alt="">
+    </div>
+    <!-- @@@@@ 프로필 종료 -->
+
+
+    
+    <!-- @@@@@ 포트폴리오 화면 시작 -->
+    <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="slide-container">
+            <div class="slide"><img src="img/slide01.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide02.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide03.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide04.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide05.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide06.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide07.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide08.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide09.jpg" alt=""></div>
+            <div class="slide"><img src="img/slide10.jpg" alt=""></div>
+        </div>
+        
+        
+        <div class="slide-nav">
+            <div class="slide"><img src="img/slide01.jpg" alt="이미지01" title="이미지01"></div>
+            <div class="slide"><img src="img/slide02.jpg" alt="이미지02" title="이미지02"></div>
+            <div class="slide"><img src="img/slide03.jpg" alt="이미지03" title="이미지03"></div>
+            <div class="slide"><img src="img/slide04.jpg" alt="이미지04" title="이미지04"></div>
+            <div class="slide"><img src="img/slide05.jpg" alt="이미지05" title="이미지05"></div>
+            <div class="slide"><img src="img/slide06.jpg" alt="이미지05" title="이미지05"></div>
+            <div class="slide"><img src="img/slide07.jpg" alt="이미지05" title="이미지05"></div>
+            <div class="slide"><img src="img/slide08.jpg" alt="이미지05" title="이미지05"></div>
+            <div class="slide"><img src="img/slide09.jpg" alt="이미지05" title="이미지05"></div>
+            <div class="slide"><img src="img/slide10.jpg" alt="이미지05" title="이미지05"></div>
+        </div>
+    </section>
+    <!-- @@@@@ 포트폴리오 화면 종료 -->
+    
+</body>
+</html>
